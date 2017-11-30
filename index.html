@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Nathan Glick - Portfolio</title>
+</head>
+<body>
+    <header>
+        <!--p>About Gallery Contact Resume</p-->
+        <div class="page_links">
+            <table id="full_nav">
+                <tr>
+                    <th><a href="#home">Home</a></th>
+                    <th><a href="#about">About</a></th>
+                    <th><a href="#Gallery">Gallery</a></th>
+                    <th><a href="#contact">Contact</a></th>
+                    <th><a href="resume.html">Resume</a></th>
+                </tr>
+            </table>
+
+            
+        </div>
+    </header>
+
+    <nav id="mobile_nav">
+        <div id="toggle">
+            <input type="checkbox">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="video_bg">
+        <iframe src="https://www.youtube.com/embed/VjIc6wu2GE0?rel=0&amp;controls=0&autoplay=1&loop=1&showinfo=0&playlist=VjIc6wu2GE0" allowfullscreen></iframe>
+    </div>
+
+    <div class="parallax" id="home">
+        <div id="top" class="slideTop">
+            <div class="base">
+                <h1 class="title">Nathan Glick</h1>
+                <h2 class="title">Game Designer & Programmer</h2>
+            </div>
+            <div class="back">
+            </div>
+        </div>
+        <div class="slideBottom">
+            <div id="about">
+                <div class="base">
+                    <h1 class="title">About Me</h1>
+                    <!--Image of me-->
+                    <div id="about_flex">
+                        <div><img id="nate_pic" src="NateGlick.jpg" alt="Nate_Glick"/></div>
+                        <div><p class="title" id="bio">Hi! I'm Nate, a current Game Design & Development student at RIT! I am mostly a programmer, but I like to work on the design for a lot of my projects as well. I am well versed in languages such as: C#, Java, HTML/CSS, and a little bit of Python. As for software, I have lots of experience in Unity3D, Autodesk Maya, Autodesk Inventor, Adobe Photoshop, Adobe After Effects, Vegas Pro, Visual Studio, and Eclipse, among others. I also am studying Japanese, and I am a player for the RIT eSports Heroes of the Storm team!</p></div>
+                    </div>
+                </div>
+                <div class="back">
+                </div>
+            </div>
+            <div id="Gallery">
+                <div class="base">
+                    <h1 class="title">Gallery</h1>
+                    <!--a bunch of images go here-->
+                    <div id="game_thumbnails">
+                        <div>
+                            <a href="javascript:void(0)" onclick="document.getElementById('detached').style.display='block';"><img class="thumb" src="detached_thumb.jpg" alt="detached_thumb"/></a>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0)" onclick="document.getElementById('pixel').style.display='block';"><img class="thumb" src="pixel_thumb.jpg" alt="pixel_thumb"/></a>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0)" onclick="document.getElementById('echo').style.display='block';"><img class="thumb" src="echo_thumb.jpg" alt="echo_thumb"/></a>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0)" onclick="document.getElementById('timelock').style.display='block';"><img class="thumb" src="timelock_thumb.jpg" alt="timelock_thumb"/></a>
+                        </div>
+                    </div>
+
+                    <!--Pop-up divs for games in gallery-->
+                    <a href="javascript:void(0)" onclick="document.getElementById('detached').style.display='none';"><div class="overlay" id="detached">
+                        <div class="game_title">
+                            <div>
+                                <img src="detached_thumb.jpg" alt="detached_thumb"/>
+                                <h2>Detached<br>2D Platformer<br>Monogame</h2>
+                            </div>
+                            
+                        </div>
+                        <div class="description">
+                            <div><p class="about_game">About Game<br>Detached is a 2D platformer where the object of the game is to collect body parts to gain the power to pass through different colored blocks.</p></div>
+                            <div><p class="dev_notes">Dev Notes<br>Monogame is a tough "engine" to work in, as the entire game is made purely in C#. This game was my group's final project for GDAPS II.</p></div>
+                        </div>
+                    </div></a>
+
+                    <a href="javascript:void(0)" onclick="document.getElementById('pixel').style.display='none';"><div class="overlay" id="pixel">
+                        <div class="game_title">
+                            <div>
+                                <img src="pixel_thumb.jpg" alt="pixel_thumb"/>
+                                <h2>Pixel Run<br>2D Platformer<br>Unity</h2>
+                            </div>
+                            
+                        </div>
+                        <div class="description">
+                            <div><p class="about_game">About Game<br>Pixel Run is an infinite 2D runner, where the object is to live as long as possible while avoiding blocks that are moving across the screen.</p></div>
+                            <div><p class="dev_notes">Dev Notes<br>Pixel Run was made for the MS Paint Game Jam, and only took about 6 hours to make. It was also my first 2D Unity project!</p></div>
+                        </div>
+                    </div></a>
+
+                    <a href="javascript:void(0)" onclick="document.getElementById('echo').style.display='none';"><div class="overlay" id="echo">
+                        <div class="game_title">
+                            <div>
+                                <img src="echo_thumb.jpg" alt="echo_thumb"/>
+                                <h2>E.C.H.O.<br>3D Puzzle / Adventure<br>Unity3D</h2>
+                            </div>
+                            
+                        </div>
+                        <div class="description">
+                            <div><p class="about_game">About Game<br>E.C.H.O. places you in the shoes of a human test subject who lost their vision during an experiment. Using the power of sound and echolocation, you must travel through a series of dark mazes.</p></div>
+                            <div><p class="dev_notes">Dev Notes<br>Echo was made for the Music Game Jam, although the "music" part kinda got away from us during development. Fun fact, the "hard" mode levels are actually puzzle levels that we created for easy mode, but they were so frustrating to play while blind that we almost got rid of them entirely! (You can still play them in hard mode if you wish to suffer ;D)</p></div>
+                        </div>
+                    </div></a>
+
+                    <a href="javascript:void(0)" onclick="document.getElementById('timelock').style.display='none';"><div class="overlay" id="timelock">
+                        <div class="game_title">
+                            <div>
+                                <img src="timelock_thumb.jpg" alt="timelock_thumb"/>
+                                <h2>TimeLock<br>2D Rogue-Like<br>GameMaker: Studio</h2>
+                            </div>
+                            
+                        </div>
+                        <div class="description">
+                            <div><p class="about_game">About Game<br>TimeLock is a 2D rogue-like game, similar to games like <em>The Binding of Isaac</em> or <em>Enter the Gungeon</em>. Each playthrough will have a random floor layout, so it's worth playing multiple times!</p></div>
+                            <div><p class="dev_notes">Dev Notes<br>I actually made this back in high school as part of a group project for my game design class. There are probably around 20 different rooms to explore, and I have an extensive password system if you want to have some sick cheat codes. The main mechanic of the game allows you to reverse time, similar to Tracer in <em>Overwatch</em>.</p></div>
+                        </div>
+                    </div></a>
+
+                </div>
+                <div class="back">
+                </div>
+            </div>
+            <div id="contact">
+                <div class="base">
+                    <h1 class="title">Contact Me</h1>
+                    <div id="basic_contact">
+                        <h3 class="title">E-mail: nxg9997@rit.edu</h3>
+                        <h3 class="title">Phone: (203) 727 - 2109</h3>
+                    </div>
+                    <div id="socials">
+                        <div><a href="https://twitter.com/NateGlick"><img src="twitter.png" alt="twitter"/></a></div>
+                        <div><a href="https://twitch.tv/razekii"><img src="twitch.png" alt="twitch"/></a></div>
+                        <div><a href="https://github.com/nxg9997"><img src="github.png" alt="github"/></a></div>
+                        <div><a href="https://www.linkedin.com/in/nathan-glick"><img src="linkedin.png" alt="linkedin"/></a></div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <h3>© Nathan Glick 2017</h3>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

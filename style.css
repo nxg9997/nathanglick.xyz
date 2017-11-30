@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+/*From W3Schools, sets up the parallax layer. I also set the font family for the page*/
+html { 
+    /* The image used */
+    /*background-image: url("stockbg.jpeg");*/
+
+    /* Set a specific height */
+    height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Oxygen', 'sans-serif';
+}
+
+/*sets video as parallax layer*/
+.video_bg iframe {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 0px;
+}
+
+/*positions and sizes the home page (section overlaying the parallax layer)*/
+.slideTop {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    top: 25vh;
+    padding: 0;
+    
+}
+
+/*formatting for the content of the page, sets up a flexbox for the different sections for easy positioning and responsive design*/
+.slideBottom {
+    /*height: 100vh;*/
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: -1px 0 30px black;
+}
+
+/*removes scrollbar visibility*/
+::-webkit-scrollbar{
+    display: none;
+}
+
+/*positions the header at the top of the screen*/
+header {
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: black;
+    z-index: 10;
+}
+
+/*following css creates the hamburger menu for mobile, credit to https://codepen.io/erikterwan/pen/EVzeRP for the guide*/
+#mobile_nav {
+    display: none;
+    height: 4vh;
+    width: 100%;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    background: black;
+    z-index: 10;
+}
+
+#toggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    /*user-select: none;*/
+}
+
+#toggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    z-index: 2;
+
+    -webkit-touch-callout: none;
+}
+
+#toggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+}
+
+#toggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#toggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#toggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#toggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#toggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#toggle input:checked ~ ul
+{
+  transform: none;
+}
+
+#mobile_nav a{
+    text-decoration: none;
+    color: #272727;
+}
+
+/*moves section links in the header to the right side of the header, and fixes the text color and gives some extra padding on top*/
+.page_links {
+    float: right;
+    color: rgb(206, 206, 206);
+    padding-top: 1vh;
+}
+
+/*formats my name on the parallax overlay*/
+.slideTop h1 {
+    font-size: 10vh;
+    text-shadow: 0px 0px 20px #6d6d6d;
+    
+}
+
+/*adds shadow onto the test under my name*/
+.slideTop h2 {
+    text-shadow: 0px 0px 20px #6d6d6d;
+}
+
+/*spreads out the section links in the header*/
+th {
+    padding-right: 10px;
+}
+
+/*removes ugly blue link text from section links in the header*/
+th a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*changes height of gallery and contact sections*/
+/*#about,*/ #Gallery, #contact {
+    height: 75vh;
+    
+}
+
+/*resizes, rotates, and rounds my picture*/
+#nate_pic {
+    width: 40vh;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    border-radius: 500px;
+}
+
+/*fixes the height and background color for the about section*/
+#about {
+    background-color: #4cb4ff;
+    height: 60vh;
+}
+
+/*fixes the background color for the gallery section*/
+#Gallery {
+    background-color: #0094ff;
+}
+
+/*fixes the background color for the contact section*/
+#contact {
+    background-color: #0076cc;
+}
+
+/*formats the headings for the different sections*/
+#about h1, #Gallery h1, #contact h1 {
+    font-size: 5vh;
+    padding: 15px;
+    padding-top: 0;
+}
+
+/*formats heading for about me section*/
+#about h1 {
+    padding-bottom: 40px;
+    text-align: left;
+}
+
+/*places about me bio to the right of my picture, and aligns it to the top of my picture*/
+#about p {
+    text-align: left;
+    font-size: 2vh;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+/*places about content in a flexbox*/
+#about .base #about_flex {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/*creates a flexbox to manage the game images in the gallery*/
+#game_thumbnails {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/*adjusts the size of the game image in the gallery*/
+.thumb {
+    width: 100%;
+    margin: 0;
+}
+
+/*formats the invisible popup info box for each game in the gallery. Javascript code allows the user to click a game to make the popup show up*/
+.overlay {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 35%;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px black;
+    background-color: #4cb4ff;
+}
+
+/*an attempt at removing info box blue text*/
+.overlay a {
+    text-decoration: none;
+}
+
+/*resizes and floats the game image in the popup box to the left*/
+.overlay img {
+    width: 50%;
+    border-radius: 10px;
+    float: left;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/*centers game title on right side of popup box*/
+.overlay h2 {
+    text-align: center;
+    display: block;
+    margin-top: 0;
+    padding-top: 10%;
+}
+
+/*creates a flexbox that holds the "About Game" and "Dev Notes" sections of the popup box*/
+.overlay .description/*, .overlay #game_title*/ {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    
+}
+
+/*centers the "About Game" and "Dev Notes" sections of the popup box*/
+.overlay .description div/*, .overlay #game_title div*/ {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+/*centers email and phone number, changes font size*/
+#contact #basic_contact {
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+/*creates a flexbox to hold the social media icons, centers it on page*/
+#contact #socials {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/*reduces the size of social media icons*/
+#contact #socials img {
+    width: 50%;
+}
+
+/*formats the footer*/
+footer {
+    text-align: center;
+    background-color: #004a7f;
+    color: rgb(29, 29, 29);
+}
+
+/*Styles specific to resume page*/
+.addresses {
+    float: right;
+    top: 0;
+    right:0;
+    position: absolute;
+}
+
+#res_header {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+}
+
+#res_info {
+    position: absolute;
+    top: 20vh;
+    text-align: left;
+}
+
+#res_info table ul {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#res_skills th {
+    padding-right: 43px;
+}
+
+/*changes css if the screen's width is less than or equal to 530px*/
+@media screen and (max-width: 530px){
+
+    /*sets background color for the entire page, used in place of video on mobile*/
+    html {
+        background-color: #89b4ff;
+    }
+
+    /*hides video on mobile*/
+    .video_bg {
+        display: none;
+    }
+
+    /*removes shadow from parallax*/
+    .slideBottom {
+        box-shadow: none;
+    }
+
+    /*displays hamburger menu on mobile*/
+    #mobile_nav {
+        display: block;
+    }
+
+    /*hides regular navigation menu on mobile*/
+    #full_nav {
+        display: none;
+    }
+
+    /*changes the gallery to a vertical alignment*/
+    #game_thumbnails {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /*resize the gallery to fit vertical alignment*/
+    #Gallery {
+        height: 310vh;
+    }
+
+    /*changes font size for mobile*/
+    #about p {
+        flex-direction: column;
+        font-size: 1.5vh;
+    }
+
+    /*resize my picture on mobile*/
+    #nate_pic {
+        width: 75%;
+    }
+
+    /*edit formatting for popup game info on mobile*/
+    .overlay {
+        height: 80vh;
+        width: 50vh;
+        left: 10%;
+    }
+
+    /*fix font size and background color of resume on mobile*/
+    #res_info {
+        font-size: 1.8vh;
+        top: 30vh;
+    }
+
+    #res_header p {
+        font-size: 2vh;
+    }
+
+    #res_html {
+        background-color: #fff;
+    }
+
+}
